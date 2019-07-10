@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>What is App</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="login-area"></div>
+        <div class="messages-area"></div>
+    </div>
+
+    <script id="login-template" type="text/x-handlebars-template">
+        {{#if isLoggedIn}}
+            <p>Hi {{username}}</p>
+            <div class="button" onclick=logOut()>Logout</div>
+        {{else}}
+            <input id="username" placeholder="Username">
+            <div class="button" onclick=logIn()>Login</div>
+        {{/if}}
+    </script>
+
+    <script id="messages-template" type="text/x-handlebars-template">
+
+        <div class="messages">
+        {{#each messages}}
+        <div class="message-area">
+            <span class="sender">{{sender}}:</span>
+            <span class="message">{{text}}</span>
+        </div>
+        {{/each}}
+        </div>
+
+        <div class="new-message">
+            <input id="to" placeholder="To">
+            <input id="new-message" placeholder="Message">
+            <div class="button" onclick=sendMessage()>Send</div>
+        </div>
+    </script>
+
+    <script id="add-friend-template" type="text/x-handlebars-template">
+        <input id="new-friend" placeholder="Friend">
+        <div class="button">Add</div>
+    </script>
+
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="User.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

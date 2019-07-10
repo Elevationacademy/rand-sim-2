@@ -1,0 +1,78 @@
+body{
+    padding: 1vw;
+    overflow: hidden;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #596275;
+    color: whitesmoke;
+}
+
+#container {
+    display: grid;
+    grid-template-areas:
+        "m l"
+        "m a";
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 5% 90% 5%;
+    height: 100vh;
+}
+
+.login-area {
+    grid-area: l;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-content: center;
+}
+
+#username{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 0.8em;
+
+}
+
+.button{
+    background-color: #f78fb3;
+    text-align: center;
+    box-shadow: 1px 1px 3px black;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 10px 4px 10px 4px;
+    line-height: 2em;
+    margin-left: 5px;
+}
+
+.button:hover{
+    background-color: #f8a5c2;
+}
+
+.button:active{
+    background-color: #f78fb3;
+}
+
+.messages-area{
+    display: grid;
+    grid-area: m;
+    grid-template-rows: 80% 20%;
+    height: 100%;
+}
+
+.messages{
+    padding: 1vw;
+}
+
+.message-area{
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+.new-message{
+    display: grid;
+    grid-template-rows: 15% 65% 20%;
+    box-shadow: 1px 1px 3px black;
+}
+
+.new-message .button{
+    border-radius: 0;
+    margin-left: 0;
+}
