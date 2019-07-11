@@ -5,13 +5,16 @@ const Message = require('../models/Message').model
 
 router.post('/login/', function (req, res) {
     const username = req.body.username
-    User.findOne({ name: username }, function (err, user) {
-        if (!user) {
-            console.log(user)
-            const newUser = new User({ name: username, friends: [], messages: [] })
-            newUser.save()
-            res.send(newUser)
-        } else { res.send(user) }
+
+    User.findOne({ name: username }, function (err, existingUser) {
+
+        const user = existingUser ?
+            existingUser :
+            new User({ name: username, friends: [], messages: [] })
+
+        if (!existingUser) { user.save() }
+
+        res.send(user)
     })
 })
 

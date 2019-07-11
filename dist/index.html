@@ -18,7 +18,7 @@
 
     <script id="login-template" type="text/x-handlebars-template">
         {{#if isLoggedIn}}
-            <p>Hi {{username}}</p>
+            <span>Hi {{username}}</span>
             <div class="button" onclick=logOut()>Logout</div>
         {{else}}
             <input id="username" placeholder="Username">
@@ -39,14 +39,9 @@
 
         <div class="new-message">
             <input id="to" placeholder="To">
-            <input id="new-message" placeholder="Message">
+            <textarea id="new-message" placeholder="Message"></textarea>
             <div class="button" onclick=sendMessage()>Send</div>
         </div>
-    </script>
-
-    <script id="add-friend-template" type="text/x-handlebars-template">
-        <input id="new-friend" placeholder="Friend">
-        <div class="button">Add</div>
     </script>
 
     <script src="/jquery/dist/jquery.js"></script>

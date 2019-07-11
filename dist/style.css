@@ -10,7 +10,7 @@ body{
     display: grid;
     grid-template-areas:
         "m l"
-        "m a";
+        "m .";
     grid-template-columns: 80% 20%;
     grid-template-rows: 5% 90% 5%;
     height: 100vh;
@@ -59,11 +59,18 @@ body{
 
 .messages{
     padding: 1vw;
+    overflow: scroll;
+    margin-bottom: 1vh;
 }
 
 .message-area{
     display: grid;
     grid-template-columns: 10% 90%;
+    background-color: #ecf0f1;
+    color: black;
+    padding: 1vw;
+    margin: 5px;
+    border-radius: 2px;
 }
 
 .new-message{

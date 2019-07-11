@@ -12,7 +12,6 @@ let user
 const logIn = function () {
     const username = $("#username").val()
     $.post('/login', { username }, function (u) {
-        debugger
         user = new User(username)
         render(LOGIN_TEMPLATE, { isLoggedIn: true, username }, LOGIN_AREA)
         render(MESSAGES_TEMPLATE, { messages: u.messages }, MESSAGE_AREA)
@@ -31,7 +30,5 @@ const sendMessage = function () {
         render(MESSAGES_TEMPLATE, { messages: user.messages }, MESSAGE_AREA)
     })
 }
-
-
 
 render(LOGIN_TEMPLATE, { isLoggedIn: false }, LOGIN_AREA)
