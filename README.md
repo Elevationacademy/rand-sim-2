@@ -11,8 +11,8 @@
 ### Friends
 As is, any user can send any other user a message. Instead, users should only be able to send messages to their friends. The `User` Model already has a `friends` array, but it's never used. As such:
 
-- Give the ability to "add a friend"
 - Show a friends list on the right of the screen
+- Give the ability to "add a friend"
 - Clicking a friend from the list should populate the `To` input 
 - When a user presses "Send", first validate that they are sending the message to a friend
 
